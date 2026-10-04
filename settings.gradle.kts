@@ -24,3 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MobDev"
 include(":laba1")
+include(":laba2")
+include(":laba3")

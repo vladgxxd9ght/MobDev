@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">laba2</string>
+    <string name="hint">Введите имя</string>
+    <string name="but">Тык</string>
+</resources>

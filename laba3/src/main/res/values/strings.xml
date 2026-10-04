@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">laba3</string>
+    <string name="act1">Activity 1</string>
+    <string name="act2">Activity 2</string>
+    <string name="fon">Малов В. Д. БОМ41ПИА</string>
+    <string name="hint">Введите имя</string>
+    <string name="btn">Далее</string>
+    <string name="input">Вы ввели:</string>
+    <string name="forward">Вперёд</string>
+</resources>
