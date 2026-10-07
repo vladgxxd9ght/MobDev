@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener { val intent = Intent(this@MainActivity, MainActivity2::class.java)
-            intent.putExtra("text2remember", editText.text.toString())
+            intent.putExtra("textremember", editText.text.toString())
             startActivity(intent)  }
     }
 }

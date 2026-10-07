@@ -7,4 +7,8 @@
     <string name="btn">Далее</string>
     <string name="input">Вы ввели:</string>
     <string name="forward">Вперёд</string>
+    <string name="back">Назад</string>
+    <string name="google">Искать в Google</string>
+    <string name="share">Поделиться</string>
+    <string name="u_input">Вы ввели</string>
 </resources>

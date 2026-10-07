@@ -1,5 +1,7 @@
 package com.example.laba3
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -7,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.content.Intent
+
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +23,30 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         val textView = findViewById<TextView>(R.id.textView6)
-        textView.text = intent.getStringExtra("text2remember")
+        val receivedText = intent.getStringExtra("textremember") ?: ""
+        textView.text = receivedText
 
-        val button = findViewById<Button>(R.id.button2)
+        val buttonClose = findViewById<Button>(R.id.button2)
+        val buttonShare = findViewById<Button>(R.id.buttonShare)
+        val buttonSearch = findViewById<Button>(R.id.buttonSearch)
 
-        button.setOnClickListener {
+        buttonClose.setOnClickListener {
             finish()
+        }
+
+        buttonShare.setOnClickListener {
+            val sendIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, receivedText)
+            }
+            val shareIntent = Intent.createChooser(sendIntent, "Поделиться через:")
+            startActivity(shareIntent)
+        }
+
+        buttonSearch.setOnClickListener {
+            val searchUri = Uri.parse("https://www.google.com/search?q=${Uri.encode(receivedText)}")
+            val browserIntent = Intent(Intent.ACTION_VIEW, searchUri)
+            startActivity(browserIntent)
         }
     }
 }
